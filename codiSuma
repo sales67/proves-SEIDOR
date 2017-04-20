@@ -12,7 +12,6 @@ public class SumaController {
     @RequestMapping("/suma")
     public Suma Suma(@RequestParam(value="n1")int n1,@RequestParam(value="n2")int n2) {  
     	int suma=n1+n2;
-        return new Suma(String.format(template,n1,n2,suma));
-        dvfj
+        return new Suma(String.format(template,n1,n2,suma));        
         } 
 }
