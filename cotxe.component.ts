@@ -70,5 +70,10 @@ export class CotxeComponent{
                .subscribe(
                 data => { this.addName3 = data;},                    
                 () => console.log('has actualitzat la marca: '+this.addName3)
-      );}               
+      );}  
+      updateMarca2(){        this.cotxeService.updateMarca(this.addId3,this.addName3,this.addConce3,this.addCountry3,this.addYear3)
+               .subscribe(
+                data => { this.addName3 = data;},                    
+                () => console.log('has actualitzat la marca: '+this.addName3)
+      );}             
     }
