@@ -76,4 +76,7 @@ export class CotxeComponent{
                 data => { this.addName3 = data;},                    
                 () => console.log('has actualitzat la marca: '+this.addName3)
       );}             
+
+
+               
     }
