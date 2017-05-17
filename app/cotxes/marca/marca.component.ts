@@ -5,12 +5,11 @@ import {Http, Headers,Response} from '@angular/http';
 import {Routes,Router} from '@angular/router';
 import { Marca }   from './marca';
 import {Model} from './model';
-import {sprintf} from "sprintf-js";
 
 
 @Component({
-  selector: 'cotxe',
-  templateUrl:'./cotxe.component.html',
+  selector: 'marca',
+  templateUrl:'./marca.component.html',
   providers: [MarcaService]
 })
 
