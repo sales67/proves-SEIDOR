@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./model.component.css']
 })
 export class ModelComponent implements OnInit {
-	test = "aaa";
+	test = "Si es veu aixo, funciona";
   constructor() { }
 
   ngOnInit() {
