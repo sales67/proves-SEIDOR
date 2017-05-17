@@ -9,7 +9,7 @@ import {sprintf} from "sprintf-js";
 
 @Injectable()
 
-export class CotxeService{
+export class MarcaService{
 
 private cotxeUrl = 'http://localhost:8080/cotxe/listMarca';
 private modelUrl = 'http://localhost:8080/cotxe/getModel?id=';

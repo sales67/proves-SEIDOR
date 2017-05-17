@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 //import {StateService} from '../common/state.service';
-import {CotxeService} from '../cotxe/cotxe.service';
+import {MarcaService} from '../marca/marca.service';
 import {Http, Headers,Response} from '@angular/http';
 import {Routes,Router} from '@angular/router';
-import { Cotxe }   from './cotxe';
+import { Marca }   from './marca';
 import {Model} from './model';
 import {sprintf} from "sprintf-js";
 
@@ -11,15 +11,15 @@ import {sprintf} from "sprintf-js";
 @Component({
   selector: 'cotxe',
   templateUrl:'./cotxe.component.html',
-  providers: [CotxeService]
+  providers: [MarcaService]
 })
 
 
-export class CotxeComponent{
+export class MarcaComponent{
     message: string;
     errorMessage:string;
     nom:any; 
-    cotxes:Cotxe;
+    marques:Marca;
     models:Model;
     idMarca;
     addName;
@@ -39,34 +39,34 @@ export class CotxeComponent{
     addYear3;
       
 
-    constructor(private cotxeService: CotxeService) { }
+    constructor(private marcaService: MarcaService) { }
 
   listMarca(){
-     this.cotxeService.getCotxes()
+     this.marcaService.getCotxes()
                 .subscribe(
-                data => { this.cotxes = data;console.log(data);},
+                data => { this.marques = data;console.log(data);},
                 err => console.error(err),
                 () => console.log('done')
       );}
 
    listModel(){        
-    this.cotxeService.getModel(this.idMarca)
+    this.marcaService.getModel(this.idMarca)
     .subscribe(
                 data => { this.models = data;console.log(data);},
                 err => console.error(err),
                 () => console.log('done')
       );}  
-    addMarcaGet(){        this.cotxeService.addMarcaGet(this.addName,this.addConce,this.addCountry,this.addYear)
+    addMarcaGet(){        this.marcaService.addMarcaGet(this.addName,this.addConce,this.addCountry,this.addYear)
                .subscribe(
                 data => { this.addName = data;},                
                 () => console.log('has afegit la marca: '+this.addName)
       );}
-    addMarcaPost(){        this.cotxeService.addMarcaPost(this.addName2,this.addConce2,this.addCountry2,this.addYear2)
+    addMarcaPost(){        this.marcaService.addMarcaPost(this.addName2,this.addConce2,this.addCountry2,this.addYear2)
                .subscribe(
                 data => { this.addName2 = data;},    
                 () => console.log('has afegit la marca: '+this.addName2)
       );}
-     updateMarca(){        this.cotxeService.updateMarca(this.addId3,this.addName3,this.addConce3,this.addCountry3,this.addYear3)
+     updateMarca(){        this.marcaService.updateMarca(this.addId3,this.addName3,this.addConce3,this.addCountry3,this.addYear3)
                .subscribe(
                 data => { this.addName3 = data;},                    
                 () => console.log('has actualitzat la marca: '+this.addName3)

@@ -1,4 +1,4 @@
-export class Cotxe {
+export class Marca {
     public idConce: number;
     public name: string;
   	public any: number;
